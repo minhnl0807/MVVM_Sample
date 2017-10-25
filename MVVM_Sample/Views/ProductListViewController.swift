@@ -18,8 +18,9 @@ class ProductListViewController: UIViewController {
             }
         }
     }
-    // data
+    
     let products = [
+        Product(name: "Monitor", price: 20),
         Product(name: "Keyboard", price: 6),
         Product(name: "Mouse", price: 5)
     ]

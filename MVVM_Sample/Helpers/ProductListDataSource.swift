@@ -25,10 +25,10 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        let cell = Bundle.main.loadNibNamed("ProductCell", owner: self, options: nil)?.first as! ProductCell
         let product = products[indexPath.row]
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = String(product.price)
+        cell.nameLabel.text = product.name
+        cell.priceLabel.text = String(product.price)
         return cell
     }
 }
